@@ -94,33 +94,43 @@ namespace ADayAtTheRaces
 
         private void betsButton_Click(object sender, EventArgs e)
         {
+            // placing bet on the chosen guys behalf
             GuyArray[GuyNumber].PlaceBet((int)betAmountUD.Value, (int)dogNumberUD.Value);
         }
 
         private void startRaceButton_Click(object sender, EventArgs e)
         {
-            bool RaceStopped = false;
-            int WinningDog = 0;
-            while (RaceStopped == false)
+            if(GuyArray[0].MyBet != null && GuyArray[1].MyBet != null && GuyArray[2].MyBet != null)
             {
-                for (int i = 0; i < 4; i++)
+                bool RaceStopped = false;
+                int WinningDog = 0;
+                while (RaceStopped == false)
                 {
-                    if(GreyhoundArray[i].Run() == true)
+                    for (int i = 0; i < 4; i++)
                     {
-                        RaceStopped = true;
-                        WinningDog = i + 1;
+                        if (GreyhoundArray[i].Run() == true)
+                        {
+                            RaceStopped = true;
+                            WinningDog = i + 1;
+                        }
                     }
                 }
+                // collect the money
+                foreach (Guy guy in GuyArray)
+                {
+                    guy.Collect(WinningDog);
+                    guy.MyBet.GetDescription();
+                }
+                // return dogs back to the starting position
+                foreach (Greyhound dog in GreyhoundArray)
+                {
+                    dog.TakeStartingPosition();
+                }
             }
-            foreach(Guy guy in GuyArray)
+            else
             {
-                guy.Collect(WinningDog);
-                guy.MyBet.GetDescription();
-            }
-            foreach(Greyhound dog in GreyhoundArray)
-            {
-                dog.TakeStartingPosition();
-            }
+                MessageBox.Show("Not all initial bets have been placed yet.", "Info");
+            }   
         }
     }
 }

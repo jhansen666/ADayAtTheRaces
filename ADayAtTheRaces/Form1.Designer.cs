@@ -60,13 +60,13 @@
             // 
             // racetrackPicBox
             // 
+            this.racetrackPicBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.racetrackPicBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("racetrackPicBox.BackgroundImage")));
             this.racetrackPicBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("racetrackPicBox.InitialImage")));
             this.racetrackPicBox.Location = new System.Drawing.Point(12, 12);
-            this.racetrackPicBox.MaximumSize = new System.Drawing.Size(0, 15);
             this.racetrackPicBox.MinimumSize = new System.Drawing.Size(0, 5);
             this.racetrackPicBox.Name = "racetrackPicBox";
-            this.racetrackPicBox.Size = new System.Drawing.Size(0, 15);
+            this.racetrackPicBox.Size = new System.Drawing.Size(1082, 261);
             this.racetrackPicBox.TabIndex = 0;
             this.racetrackPicBox.TabStop = false;
             // 
@@ -74,7 +74,7 @@
             // 
             this.dog0PicBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dog0PicBox.BackgroundImage")));
             this.dog0PicBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("dog0PicBox.InitialImage")));
-            this.dog0PicBox.Location = new System.Drawing.Point(33, 40);
+            this.dog0PicBox.Location = new System.Drawing.Point(49, 28);
             this.dog0PicBox.Name = "dog0PicBox";
             this.dog0PicBox.Size = new System.Drawing.Size(100, 50);
             this.dog0PicBox.TabIndex = 1;
@@ -85,7 +85,7 @@
             this.dog1PicBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dog1PicBox.BackgroundImage")));
             this.dog1PicBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.dog1PicBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("dog1PicBox.InitialImage")));
-            this.dog1PicBox.Location = new System.Drawing.Point(33, 96);
+            this.dog1PicBox.Location = new System.Drawing.Point(49, 84);
             this.dog1PicBox.Name = "dog1PicBox";
             this.dog1PicBox.Size = new System.Drawing.Size(100, 50);
             this.dog1PicBox.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             this.dog2PicBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dog2PicBox.BackgroundImage")));
             this.dog2PicBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("dog2PicBox.InitialImage")));
-            this.dog2PicBox.Location = new System.Drawing.Point(33, 152);
+            this.dog2PicBox.Location = new System.Drawing.Point(49, 140);
             this.dog2PicBox.Name = "dog2PicBox";
             this.dog2PicBox.Size = new System.Drawing.Size(100, 50);
             this.dog2PicBox.TabIndex = 3;
@@ -105,7 +105,7 @@
             // 
             this.dog3PicBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dog3PicBox.BackgroundImage")));
             this.dog3PicBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("dog3PicBox.InitialImage")));
-            this.dog3PicBox.Location = new System.Drawing.Point(33, 208);
+            this.dog3PicBox.Location = new System.Drawing.Point(49, 196);
             this.dog3PicBox.Name = "dog3PicBox";
             this.dog3PicBox.Size = new System.Drawing.Size(100, 50);
             this.dog3PicBox.TabIndex = 4;

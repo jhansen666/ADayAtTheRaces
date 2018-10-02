@@ -10,7 +10,7 @@ namespace ADayAtTheRaces
     public class Guy
     {
         public string Name;
-        public Bet MyBet = null;
+        public Bet MyBet;
         public int Cash;
         public RadioButton MyRadioButton;
         public Label MyLabel;
@@ -21,16 +21,13 @@ namespace ADayAtTheRaces
             {
                 MyLabel.Text = Name + " bets " + MyBet.Amount + " bucks on dog #" + MyBet.Dog;
             }
-
             MyRadioButton.Text = Name + " has " + Cash + " bucks.";
-
         }
         
         public bool PlaceBet(int BetAmount, int DogToWin)
         {
             if(Cash >= BetAmount && (MyBet == null || MyBet.Amount == 0))
             {
-                Cash -= BetAmount;
                 MyBet = new Bet(BetAmount, DogToWin, this);
                 UpdateLabels();
                 return true;    

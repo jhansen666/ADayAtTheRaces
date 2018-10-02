@@ -29,7 +29,7 @@ namespace ADayAtTheRaces
                 return false;
             }            
         }
-
+        // reset the greyhounds position
         public void TakeStartingPosition()
         {
             Location = 0;
