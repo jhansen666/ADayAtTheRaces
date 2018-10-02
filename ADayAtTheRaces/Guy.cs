@@ -17,17 +17,42 @@ namespace ADayAtTheRaces
 
         public void UpdateLabels()
         {
+            if(MyBet != null)
+            {
+                MyLabel.Text = Name + " bets " + MyBet.Amount + " bucks on dog #" + MyBet.Dog;
+            }
+
+            MyRadioButton.Text = Name + " has " + Cash + " bucks.";
 
         }
         
         public bool PlaceBet(int BetAmount, int DogToWin)
         {
-            return true;
+            if(Cash >= BetAmount && (MyBet == null || MyBet.Amount == 0))
+            {
+                Cash -= BetAmount;
+                MyBet = new Bet(BetAmount, DogToWin, this);
+                UpdateLabels();
+                return true;    
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public void Collect()
+        // resets the bet to 0
+        public void ClearBet()
         {
+            MyBet.Amount = 0;
+            UpdateLabels();
+        }
 
+        public void Collect(int Winner)
+        {
+            Cash += MyBet.PayOut(Winner);
+            MyBet.ClearBet();
+            UpdateLabels();
         }
     }
 }

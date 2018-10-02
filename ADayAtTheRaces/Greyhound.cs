@@ -11,19 +11,29 @@ namespace ADayAtTheRaces
     {
         public int StartingPosition;
         public int RacetrackLength;
-        public PictureBox MyPictureBox;
+        public PictureBox MyPictureBox = null;
         public int Location = 0;
         public Random Randomizer;
 
         public bool Run()
         {
-            return true;
+            Location += Randomizer.Next(1, 4);
+            MyPictureBox.Left = StartingPosition + Location;
+            // determine wether the greyhound has won the race or not
+            if (MyPictureBox.Right == MyPictureBox.Parent.Right)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }            
         }
 
         public void TakeStartingPosition()
         {
             Location = 0;
-            MyPictureBox.Left = 0;
+            MyPictureBox.Left = StartingPosition;
         }
     }
 }
